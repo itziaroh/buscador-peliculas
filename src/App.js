@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 import 'bulma/css/bulma.css';
+import Title from './components/Title';
+import SearchForm from './components/SearchForm';
 
 class App extends React.Component {
   constructor(props) {
@@ -10,7 +12,10 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        BUSCADOR DE PELICULAS
+        <Title>BUSCADOR DE PELICULAS</Title>
+        <div className="SearchForm-wrapper">
+          <SearchForm />
+        </div>
       </div>
     );
   }
