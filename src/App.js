@@ -3,6 +3,7 @@ import './App.css';
 import 'bulma/css/bulma.css';
 import Title from './components/Title';
 import SearchForm from './components/SearchForm';
+import MoviesList from './components/MoviesList';
 
 class App extends React.Component {
   constructor(props) {
@@ -11,18 +12,10 @@ class App extends React.Component {
       results: []
     }
     this.handleResults = this.handleResults.bind(this);
-    this.renderResults = this.renderResults.bind(this);
   }
 
   handleResults(results) {
     this.setState({ results })
-  }
-
-  renderResults() {
-    const { results } = this.state
-    return results.map(movie => {
-      return <p key={movie.imdbID}>{movie.Title}</p>
-    })
   }
 
   render() {
@@ -36,11 +29,10 @@ class App extends React.Component {
         </div>
         {this.state.results.length === 0
           ? <p>Sin resultados</p>
-          : this.renderResults()
+          : <MoviesList movies={this.state.results} />
         }
       </div>
-    );
+    )
   }
 }
-
 export default App;
