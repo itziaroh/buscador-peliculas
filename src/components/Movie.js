@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Movie = props => {
 
-    const { poster, title, year } = props
+    const { id, poster, title, year } = props
 
     return (
-        <div className="card">
+        <Link to={`detail/${id}`} className="card">
             <div className="card-image">
                 <figure className="image ">
                     <img
@@ -22,7 +23,7 @@ const Movie = props => {
                     </div>
                 </div>
             </div>
-        </div>
+        </Link >
     )
 }
 

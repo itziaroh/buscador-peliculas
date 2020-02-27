@@ -12,6 +12,7 @@ const MoviesList = props => {
                             title={movie.Title}
                             year={movie.Year}
                             poster={movie.Poster}
+                            id={movie.imdbID}
                         />
                     </div>
                 )
