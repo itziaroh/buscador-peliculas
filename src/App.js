@@ -9,13 +9,21 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      results: []
+      results: [],
+      usedSearch: false
     }
     this.handleResults = this.handleResults.bind(this);
+    this.renderResults = this.renderResults.bind(this);
   }
 
   handleResults(results) {
-    this.setState({ results })
+    this.setState({ results, usedSearch: true })
+  }
+
+  renderResults() {
+    return this.state.results.length === 0
+      ? <p>No hemos encontrado resultados a su búsqueda</p>
+      : <MoviesList movies={this.state.results} />
   }
 
   render() {
@@ -27,9 +35,9 @@ class App extends React.Component {
             onResults={this.handleResults}
           />
         </div>
-        {this.state.results.length === 0
-          ? <p>Sin resultados</p>
-          : <MoviesList movies={this.state.results} />
+        {this.state.usedSearch
+          ? this.renderResults()
+          : <small>Introduzca un título</small>
         }
       </div>
     )
