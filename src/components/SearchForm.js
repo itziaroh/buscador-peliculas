@@ -36,15 +36,15 @@ class SearchForm extends Component {
                 <div className="field has-addons" >
                     <div className="control">
                         <input
-                            className="input"
+                            className="input is-rounded"
                             onChange={this.handleChange}
                             type="text"
-                            placeholder="Título de la película"
+                            placeholder="Try with Pulp Fiction"
                         />
                     </div>
                     <div className="control">
-                        <button className="button is-info">
-                            Buscar
+                        <button className="button is-warning is-rounded">
+                            Search
                     </button>
                     </div>
                 </div>

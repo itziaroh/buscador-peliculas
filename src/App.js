@@ -1,10 +1,11 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import './App.css';
+import './styles/App.css';
 import 'bulma/css/bulma.css';
 import MovieDetail from './pages/MovieDetail';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
+import Navbar from './components/Navbar';
 
 class App extends React.Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <Navbar />
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/detail/:id' component={MovieDetail} />

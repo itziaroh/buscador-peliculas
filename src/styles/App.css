@@ -1,0 +1,13 @@
+@import './moviesList.css';
+
+
+.App {
+  text-align: center;
+}
+
+.SearchForm-wrapper{
+  display: flex;
+  justify-content: center;
+  padding: 20px 0 5px 0;
+}
+

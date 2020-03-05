@@ -1,5 +1,4 @@
 import React from 'react';
-import Title from '../components/Title';
 import SearchForm from '../components/SearchForm';
 import MoviesList from '../components/MoviesList';
 
@@ -27,7 +26,7 @@ class Home extends React.Component {
     render() {
         return (
             <div>
-                <Title>BUSCADOR DE PELICULAS</Title>
+
                 <div className="SearchForm-wrapper">
                     <SearchForm
                         onResults={this.handleResults}
@@ -35,7 +34,7 @@ class Home extends React.Component {
                 </div>
                 {this.state.usedSearch
                     ? this.renderResults()
-                    : <small>Introduzca un título</small>
+                    : <small>Search for your favourites movies, series or videogames</small>
                 }
             </div>
         )

@@ -7,7 +7,7 @@ const ButtonBackHome = () => {
             to='/'
             className="button is-info"
         >
-            Volver a la portada
+            Back to Home
            </Link>
     )
 }
