@@ -32,15 +32,22 @@ class MovieDetail extends React.Component {
     }
 
     render() {
-        const { Title, Poster, Actors, Metascore, Plot } = this.state.movie
+        const { Title, Poster, Actors, Metascore, Plot, Genre, Runtime, Director } = this.state.movie
         return (
             <div>
                 <ButtonBackHome />
-                <h1>{Title}</h1>
-                <img src={Poster} alt={Title} />
-                <h3>{Actors}</h3>
-                <span>{Metascore}</span>
-                <p>{Plot}</p>
+                <h1 className="detail_title">{Title}</h1>
+                <div className="detail_info">
+                    <img src={Poster} alt={Title} />
+                    <div className="detail_info-info">
+                        <span className="detail_metascore"> <strong>Score:</strong> {Metascore}</span>
+                        <p className="detail_plot"><strong>Director:</strong> {Director}</p>
+                        <p className="detail_plot"><strong>Genre:</strong> {Genre}</p>
+                        <p className="detail_plot"><strong>Runtime:</strong> {Runtime}</p>
+                        <h3 className="detail_cast"><strong>Cast:</strong> {Actors}.</h3>
+                        <p className="detail_plot"><strong>Plot:</strong> {Plot}</p>
+                    </div>
+                </div>
             </div>
         )
     }

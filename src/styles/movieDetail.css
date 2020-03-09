@@ -1,0 +1,21 @@
+.detail_title{
+font-size: 28px;
+font-weight: bold;
+margin-bottom: 8px;
+}
+.detail_info-info{
+  text-align: justify;
+  padding: 10px 30px;
+}
+@media all and (min-width: 768px){
+  .detail_info{
+   display: flex;
+   margin: 0 60px;
+  }
+  
+}
+@media all and (min-width: 1024px){
+  .detail_info{
+   margin: 0 120px;
+  }
+}

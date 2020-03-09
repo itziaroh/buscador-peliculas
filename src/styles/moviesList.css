@@ -5,9 +5,9 @@
   padding: 16px;
   
 }
-
 .movies_list-item{
   margin-bottom: 24px;
+  padding: 10px 0;
   
 }
 @media all and (min-width: 768px){

@@ -5,10 +5,10 @@ const ButtonBackHome = () => {
     return (
         <Link
             to='/'
-            className="button is-info"
+            className="button is-warning btn-back"
         >
             Back to Home
-           </Link>
+        </Link>
     )
 }
 

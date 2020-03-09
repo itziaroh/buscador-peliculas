@@ -6,9 +6,9 @@ const Movie = props => {
     const { id, poster, title, year } = props
 
     return (
-        <Link to={`detail/${id}`} className="card">
+        <div className="card">
             <div className="card-image">
-                <figure className="image ">
+                <figure>
                     <img
                         src={poster}
                         alt={title}
@@ -21,9 +21,15 @@ const Movie = props => {
                         <p className="title is-4">{title}</p>
                         <p className="subtitle is-6">{year}</p>
                     </div>
+                    <div className="media-buttons">
+                        <button class="button  is-warning is-focused">Add to Favs</button>
+                        <Link to={`detail/${id}`}>
+                            <button class="button  is-warning is-focused">View detail</button>
+                        </Link>
+                    </div>
                 </div>
             </div>
-        </Link >
+        </div>
     )
 }
 
