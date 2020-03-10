@@ -1,68 +1,32 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# ¡Bienvenido a FindFun!
 
-## Available Scripts
+**FindFun** es una pequeña página donde buscar películas, series o videojuegos trayendo toda la información desde la API de OMBd.
+En ella puedes consultar el detalle de cada resultado e ir añadiendo aquellas que más te gusten a tus favoritos y poder consultarlo cuando desees.
 
-In the project directory, you can run:
 
-### `npm start`
+## Tecnologías usadas
+-React.js
+-JavaScript
+-Bulma (Librería CSS)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## El proyecto en tu ordenador
+Puedes ejecutar el proyecto en tu propio ordenador. Para ello tan solo debes:
+1. Clonar el repositorio (git clone)
+2. Instalar las dependencias (npm install)
+3. Iniciar el servidor local (npm start)
+	
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+# Welcome to FindFun!
+**FindFun**  is a web app where you can search movies, series and videogames bringing all the information from the OMDb API.
+In this app you are able to look up the detail of every result and add to favourites that ones you likes the most and check them out whenever you want.
 
-### `npm test`
+## Tech stack
+-React.js
+-JavaScript
+-Bulma (CSS framework)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## The project in your computer
+Also, you can run this project on your own computer. You only have to:
+1. Clone the repository (git clone)
+2. Install the dependencies (npm install)
+3. Start the localhost (npm start)
