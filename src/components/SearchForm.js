@@ -1,56 +1,46 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
 const API_KEY = '590a66a6';
 
-class SearchForm extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            inputMovie: ''
-        }
+const SearchForm = (props) => {
 
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+    const [searchText, setSearchText] = useState('')
+
+    const handleChange = (e) => {
+        setSearchText(e.target.value)
     }
 
-
-    handleChange(e) {
-        this.setState({ inputMovie: e.target.value })
-    }
-
-    handleSubmit(e) {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        const { inputMovie } = this.state
 
-        fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${inputMovie}`)
+        fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${searchText}`)
             .then(response => response.json())
             .then(data => {
                 const { Search = [] } = data
-                this.props.onResults(Search)
+                props.onResults(Search)
             })
     }
 
-    render() {
-        return (
-            <form onSubmit={this.handleSubmit}>
-                <div className="field has-addons" >
-                    <div className="control">
-                        <input
-                            className="input is-rounded"
-                            onChange={this.handleChange}
-                            type="text"
-                            placeholder="Try with Pulp Fiction"
-                        />
-                    </div>
-                    <div className="control">
-                        <button className="button is-warning is-rounded">
-                            Search
-                    </button>
-                    </div>
+    return (
+        <form onSubmit={handleSubmit}>
+            <div className="field has-addons" >
+                <div className="control">
+                    <input
+                        className="input is-rounded"
+                        onChange={handleChange}
+                        type="text"
+                        placeholder="Try with Pulp Fiction"
+                        value={searchText}
+                    />
                 </div>
-            </form>
-        )
-    }
+                <div className="control">
+                    <button className="button is-warning is-rounded">
+                        Search
+                    </button>
+                </div>
+            </div>
+        </form>
+    )
 }
 
 export default SearchForm;

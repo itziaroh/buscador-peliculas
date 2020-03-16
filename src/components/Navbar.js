@@ -21,10 +21,9 @@ const Navbar = () => {
           <Link to={'/'} className="navbar-item">
             Home
           </Link>
-
-          <a className="navbar-item" href="https://adalab.es">
+          <Link to={'/favs'} className="navbar-item">
             Favs
-          </a>
+          </Link>
         </div>
       </div>
     </nav>

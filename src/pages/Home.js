@@ -7,10 +7,12 @@ class Home extends React.Component {
         super(props);
         this.state = {
             results: [],
-            usedSearch: false
+            usedSearch: false,
+            favs: []
         }
         this.handleResults = this.handleResults.bind(this);
         this.renderResults = this.renderResults.bind(this);
+        this.handleFavs = this.handleFavs.bind(this);
     }
 
     handleResults(results) {
@@ -23,10 +25,14 @@ class Home extends React.Component {
             : <MoviesList movies={this.state.results} />
     }
 
+    handleFavs(favData) {
+        // this.setState({ favs: [...this.state.favs, favData] })
+        console.log(favData)
+    }
+
     render() {
         return (
             <div>
-
                 <div className="SearchForm-wrapper">
                     <SearchForm
                         onResults={this.handleResults}

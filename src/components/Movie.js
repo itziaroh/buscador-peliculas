@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 
 const Movie = props => {
 
+    const handleFavs = e => {
+        props.handleFavs(e.target)
+    }
+
     const { id, poster, title, year } = props
 
     return (
@@ -22,9 +26,9 @@ const Movie = props => {
                         <p className="subtitle is-6">{year}</p>
                     </div>
                     <div className="media-buttons">
-                        <button class="button  is-warning is-focused">Add to Favs</button>
+                        <button onClick={handleFavs} className="button  is-warning is-focused">Add to Favs</button>
                         <Link to={`detail/${id}`}>
-                            <button class="button  is-warning is-focused">View detail</button>
+                            <button className="button  is-warning is-focused">View detail</button>
                         </Link>
                     </div>
                 </div>
