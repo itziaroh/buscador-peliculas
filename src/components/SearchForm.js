@@ -1,46 +1,47 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 
-const API_KEY = '590a66a6';
+import { searchMoviesStart } from '../redux/search/search.actions';
 
-const SearchForm = (props) => {
+// const API_KEY = '590a66a6';
 
-    const [searchText, setSearchText] = useState('')
+const SearchForm = ({ searchMoviesStart }) => {
 
-    const handleChange = (e) => {
-        setSearchText(e.target.value)
-    }
+	const [searchText, setSearchText] = useState('')
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+	const handleChange = (e) => {
+		setSearchText(e.target.value)
+	}
 
-        fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${searchText}`)
-            .then(response => response.json())
-            .then(data => {
-                const { Search = [] } = data
-                props.onResults(Search)
-            })
-    }
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		searchMoviesStart(searchText);
+	}
 
-    return (
-        <form onSubmit={handleSubmit}>
-            <div className="field has-addons" >
-                <div className="control">
-                    <input
-                        className="input is-rounded"
-                        onChange={handleChange}
-                        type="text"
-                        placeholder="Try with Pulp Fiction"
-                        value={searchText}
-                    />
-                </div>
-                <div className="control">
-                    <button className="button is-warning is-rounded">
-                        Search
-                    </button>
-                </div>
-            </div>
-        </form>
-    )
-}
+	return (
+		<form onSubmit={handleSubmit}>
+			<div className="field has-addons" >
+				<div className="control">
+					<input
+						className="input is-rounded"
+						onChange={handleChange}
+						type="text"
+						placeholder="Try with Pulp Fiction"
+						value={searchText}
+					/>
+				</div>
+				<div className="control">
+					<button className="button is-warning is-rounded">
+						Search
+          </button>
+				</div>
+			</div>
+		</form>
+	)
+};
 
-export default SearchForm;
+const mapDispatchToProps = dispatch => ({
+	searchMoviesStart: searchText => dispatch(searchMoviesStart(searchText))
+})
+
+export default connect(null, mapDispatchToProps)(SearchForm);
