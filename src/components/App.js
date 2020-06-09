@@ -9,9 +9,6 @@ import Navbar from './Navbar';
 import Favs from '../pages/Favs';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (

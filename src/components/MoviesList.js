@@ -1,6 +1,6 @@
 import React from 'react';
+
 import Movie from './Movie';
-import { connect } from 'react-redux';
 
 const MoviesList = ({ movies }) => {
 	return (
@@ -13,17 +13,12 @@ const MoviesList = ({ movies }) => {
 							year={movie.Year}
 							poster={movie.Poster}
 							id={movie.imdbID}
-						// handleFavs={handleFavs}
 						/>
 					</div>
 				)
 			})}
-		</div >
+		</div>
 	)
 };
 
-const mapStateToProps = state => ({
-	movies: state.searchMovies.moviesResults
-})
-
-export default connect(mapStateToProps)(MoviesList);
+export default MoviesList;

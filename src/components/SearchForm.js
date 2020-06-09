@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 
 import { searchMoviesStart } from '../redux/search/search.actions';
 
-// const API_KEY = '590a66a6';
-
 const SearchForm = ({ searchMoviesStart }) => {
 
 	const [searchText, setSearchText] = useState('')

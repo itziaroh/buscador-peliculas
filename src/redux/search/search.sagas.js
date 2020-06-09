@@ -4,8 +4,10 @@ import SearchActionTypes from "./search.types";
 import { searchMoviesSuccess, searchMoviesFailure } from './search.actions';
 
 export function* searchMoviesAsync(action) {
+
   try {
-    const response = yield fetch(`http://www.omdbapi.com/?apikey=590a66a6&s=${action.payload}`);
+    const searchText = action.payload;
+    const response = yield fetch(`http://www.omdbapi.com/?apikey=590a66a6&s=${searchText}`);
     const resJson = yield response.json();
 
     yield put(searchMoviesSuccess(resJson))
