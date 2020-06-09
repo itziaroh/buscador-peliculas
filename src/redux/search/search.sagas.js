@@ -7,7 +7,7 @@ export function* searchMoviesAsync(action) {
 
   try {
     const searchText = action.payload;
-    const response = yield fetch(`http://www.omdbapi.com/?apikey=590a66a6&s=${searchText}`);
+    const response = yield fetch(`https://www.omdbapi.com/?apikey=590a66a6&s=${searchText}`);
     const resJson = yield response.json();
 
     yield put(searchMoviesSuccess(resJson))
