@@ -5,9 +5,10 @@ En ella puedes consultar el detalle de cada resultado e ir añadiendo aquellas q
 
 
 ## Tecnologías usadas
--React.js
--JavaScript
--Bulma (Librería CSS)
+- React.js
+- Redux & redux-saga
+- JavaScript
+- Bulma (Librería CSS)
 
 ## El proyecto en tu ordenador
 Puedes ejecutar el proyecto en tu propio ordenador. Para ello tan solo debes:
