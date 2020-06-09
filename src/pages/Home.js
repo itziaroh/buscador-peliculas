@@ -1,19 +1,14 @@
 import React from 'react';
-import { createStructuredSelector } from 'reselect';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import SearchForm from '../components/SearchForm';
 import MoviesList from '../components/MoviesList';
-import { selectMoviesResults } from '../redux/search/search.selectors';
+import { selectMovies } from '../redux/search/search.selectors';
 
 
-const Home = ({ movies }) => {
+const Home = () => {
 
-	// const renderResults = () => {
-	// 	return movies.length === 0
-	// 		? <p>No hemos encontrado resultados a su búsqueda</p>
-	// 		: <MoviesList movies={movies} />
-	// }
+	const movies = useSelector(selectMovies);
 
 	return (
 		<div>
@@ -26,10 +21,6 @@ const Home = ({ movies }) => {
 			}
 		</div>
 	)
-}
+};
 
-const mapStateToProps = createStructuredSelector({
-	movies: selectMoviesResults
-})
-
-export default connect(mapStateToProps)(Home);
+export default Home;
