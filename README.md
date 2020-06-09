@@ -16,6 +16,8 @@ Puedes ejecutar el proyecto en tu propio ordenador. Para ello tan solo debes:
 2. Instalar las dependencias (npm install)
 3. Iniciar el servidor local (npm start)
 
+*Nota: Este proyecto aún está en construcción.
+
 */###########################################################/*
 	
 
@@ -24,12 +26,15 @@ Puedes ejecutar el proyecto en tu propio ordenador. Para ello tan solo debes:
 In this app you are able to look up the detail of every result and add to favourites that ones you likes the most and check them out whenever you want.
 
 ## Tech stack
--React.js
--JavaScript
--Bulma (CSS framework)
+- React.js
+- Redux & redux-saga
+- JavaScript
+- Bulma (CSS framework)
 
 ## The project in your computer
 Also, you can run this project on your own computer. You only have to:
 1. Clone the repository (git clone)
 2. Install the dependencies (npm install)
 3. Start the localhost (npm start)
+
+*Note: this project is still under construction.
