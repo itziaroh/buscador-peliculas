@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { searchMoviesStart } from '../redux/search/search.actions';
 
-const SearchForm = ({ searchMoviesStart }) => {
+const SearchForm = () => {
 
-	const [searchText, setSearchText] = useState('')
+	const [searchText, setSearchText] = useState('');
+	const dispatch = useDispatch();
 
 	const handleChange = (e) => {
 		setSearchText(e.target.value)
@@ -13,7 +14,7 @@ const SearchForm = ({ searchMoviesStart }) => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		searchMoviesStart(searchText);
+		dispatch(searchMoviesStart(searchText));
 	}
 
 	return (
@@ -38,8 +39,4 @@ const SearchForm = ({ searchMoviesStart }) => {
 	)
 };
 
-const mapDispatchToProps = dispatch => ({
-	searchMoviesStart: searchText => dispatch(searchMoviesStart(searchText))
-})
-
-export default connect(null, mapDispatchToProps)(SearchForm);
+export default SearchForm;
