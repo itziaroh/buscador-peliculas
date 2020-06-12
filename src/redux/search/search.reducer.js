@@ -4,7 +4,9 @@ const INITIAL_STATE = {
 	searchText: '',
 	moviesResults: [],
 	isFetching: false,
-	errorMessage: undefined
+	errorMessage: undefined,
+	movieId: '',
+	singleMovie: {}
 }
 
 const searchMoviesReducer = (state = INITIAL_STATE, action) => {
@@ -28,6 +30,26 @@ const searchMoviesReducer = (state = INITIAL_STATE, action) => {
 				isFetching: false,
 				errorMessage: action.payload,
 				searchText: ''
+			}
+		case SearchActionTypes.SEARCH_BY_ID_START:
+			return {
+				...state,
+				isFetching: true,
+				movieId: action.payload
+			}
+		case SearchActionTypes.SEARCH_BY_ID_SUCCESS:
+			return {
+				...state,
+				isFetching: false,
+				movieId: '',
+				singleMovie: action.payload
+			}
+		case SearchActionTypes.SEARCH_BY_ID_FAILURE:
+			return {
+				...state,
+				isFetching: false,
+				movieId: '',
+				errorMessage: action.payload,
 			}
 		default:
 			return state;

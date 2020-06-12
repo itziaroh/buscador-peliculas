@@ -11,3 +11,8 @@ export const selectMovies = createSelector(
   [selectMoviesResults],
   moviesResults => moviesResults.Search
 );
+
+export const selectSingleMovie = createSelector(
+  [selectSearchMovies],
+  searchMovies => searchMovies.singleMovie
+)
