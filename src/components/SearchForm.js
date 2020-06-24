@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { Input, Button, Box, Flex } from '@chakra-ui/core';
 
 import { searchMoviesStart } from '../redux/search/search.actions';
 
@@ -19,22 +20,23 @@ const SearchForm = () => {
 
 	return (
 		<form onSubmit={handleSubmit}>
-			<div className="field has-addons" >
-				<div className="control">
-					<input
-						className="input is-rounded"
+			<Flex>
+				<Box>
+					<Input
 						onChange={handleChange}
 						type="text"
 						placeholder="Try with Pulp Fiction"
 						value={searchText}
+						focusBorderColor="green.400"
+						borderColor="green.500"
 					/>
-				</div>
-				<div className="control">
-					<button className="button is-warning is-rounded">
+				</Box>
+				<Box>
+					<Button variantColor="green" borderColor="green.500">
 						Search
-          </button>
-				</div>
-			</div>
+          </Button>
+				</Box>
+			</Flex>
 		</form>
 	)
 };

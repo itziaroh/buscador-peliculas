@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Heading, Image, Text, Box, Flex } from '@chakra-ui/core';
 
 import ButtonBackHome from '../components/ButtonBackHome';
 import { searchByIdStart } from '../redux/search/search.actions';
@@ -19,21 +20,25 @@ const MovieDetail = ({ match }) => {
 	return (
 		<div>
 			<ButtonBackHome />
-			<h1 className="detail_title">{Title}</h1>
-			<div className="detail_info">
-				<img src={Poster} alt={Title} />
-				<div className="detail_info-info">
-					<span className="detail_metascore"> <strong>Score:</strong> {Metascore}</span>
-					<p className="detail_plot"><strong>Director:</strong> {Director}</p>
-					<p className="detail_plot"><strong>Genre:</strong> {Genre}</p>
-					<p className="detail_plot"><strong>Runtime:</strong> {Runtime}</p>
-					<h3 className="detail_cast"><strong>Cast:</strong> {Actors}.</h3>
-					<p className="detail_plot"><strong>Plot:</strong> {Plot}</p>
-				</div>
-			</div>
+			<Heading>{Title}</Heading>
+			<Flex
+				direction={["column", "column", "row", "row"]}
+				alignItems={["center", "center", "flex-start"]}
+				mb="45px"
+				mx={["10px", "10px", "30px"]}
+			>
+				<Image src={Poster} alt={Title} maxWidth="50%" />
+				<Box textAlign="justify" py="10px" px="30px">
+					<Text><strong>Score:</strong> {Metascore}</Text>
+					<Text><strong>Director:</strong> {Director}</Text>
+					<Text><strong>Genre:</strong> {Genre}</Text>
+					<Text><strong>Runtime:</strong> {Runtime}</Text>
+					<Text><strong>Cast:</strong> {Actors}.</Text>
+					<Text><strong>Plot:</strong> {Plot}</Text>
+				</Box>
+			</Flex>
 		</div>
 	)
-
 }
 
 export default MovieDetail;

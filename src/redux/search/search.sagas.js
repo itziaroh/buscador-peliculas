@@ -1,4 +1,4 @@
-import { takeLatest, call, put, all, take } from 'redux-saga/effects';
+import { takeLatest, call, put, all } from 'redux-saga/effects';
 
 import SearchActionTypes from "./search.types";
 import { searchMoviesSuccess, searchMoviesFailure, searchByIdSuccess, searchByIdFailure } from './search.actions';

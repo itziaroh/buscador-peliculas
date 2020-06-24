@@ -1,7 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import '../styles/App.css';
-import 'bulma/css/bulma.css';
+
 import MovieDetail from '../pages/MovieDetail';
 import Home from '../pages/Home';
 import NotFound from '../pages/NotFound';
@@ -18,7 +17,7 @@ class App extends React.Component {
           <Route exact path='/' component={Home} />
           <Route path='/detail/:id' component={MovieDetail} />
           <Route path='/favs' component={Favs} />
-          <Route component={NotFound} />
+          <Route path='/notfound' component={NotFound} />
         </Switch>
       </div>
     )

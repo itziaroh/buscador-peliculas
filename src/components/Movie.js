@@ -1,33 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Box, Image, Flex, Grid, Text, Button } from "@chakra-ui/core";
 
 const Movie = ({ id, poster, title, year }) => {
 
 	return (
-		<div className="card">
-			<div className="card-image">
-				<figure>
-					<img
-						src={poster}
-						alt={title}
-					/>
-				</figure>
-			</div>
-			<div className="card-content">
-				<div className="media">
-					<div className="media-content">
-						<p className="title is-4">{title}</p>
-						<p className="subtitle is-6">{year}</p>
-					</div>
-					<div className="media-buttons">
-						<button className="button  is-warning is-focused">Add to Favs</button>
+		<Box>
+			<Image src={poster} alt={title} />
+			<Box>
+				<Flex justify="space-between" mt={3}>
+					<Flex direction="column" alignItems="start" maxWidth={"65%"}>
+						<Text textAlign="left">{title}</Text>
+						<Text>{year}</Text>
+					</Flex>
+					<Grid gap={2} >
+						<Button variantColor="green" borderColor="green.500">Add to Favs</Button>
 						<Link to={`detail/${id}`}>
-							<button className="button  is-warning is-focused">View detail</button>
+							<Button variantColor="green" borderColor="green.500">View detail</Button>
 						</Link>
-					</div>
-				</div>
-			</div>
-		</div>
+					</Grid>
+				</Flex>
+			</Box>
+		</Box>
 	)
 }
 

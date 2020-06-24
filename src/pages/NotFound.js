@@ -1,13 +1,16 @@
 import React from 'react';
+import { Box, Heading } from '@chakra-ui/core';
+
 import ButtonBackHome from '../components/ButtonBackHome';
+
 
 const NotFound = () => {
     return (
-        <div>
-            <h1 className="title">404!</h1>
-            <h2 className="subtitle">We couldn't find that page</h2>
+        <Box>
+            <Heading as="h1">404!</Heading>
+            <Heading>We couldn't find that page</Heading>
             <ButtonBackHome />
-        </div>
+        </Box>
     )
 }
 

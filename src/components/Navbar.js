@@ -1,52 +1,65 @@
-import React from 'react';
+import React from "react";
 import { Link } from 'react-router-dom';
-import Title from './Title';
+import { Box, Heading, Flex, Text } from "@chakra-ui/core";
 
-const Navbar = () => {
+const MenuItems = ({ children }) => (
+  <Text mt={{ base: 4, md: 0 }} mr={6} display="block">
+    {children}
+  </Text>
+);
+
+const Header = props => {
+  const [show, setShow] = React.useState(false);
+  const handleToggle = () => setShow(!show);
+
   return (
-    <nav className="navbar is-warning" role="navigation" aria-label="main navigation">
-      <div className="navbar-brand">
-        <Title>FindFun</Title>
+    <Flex
+      as="nav"
+      align="center"
+      justify="space-between"
+      wrap="wrap"
+      padding="1.5rem"
+      bg="green.500"
+      color="white"
+      {...props}
+    >
+      <Flex align="center" mr={5}>
+        <Heading as="h1" size="lg">
+          FindFun
+        </Heading>
+      </Flex>
 
-        <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
+      <Box display={{ sm: "block", md: "none" }} onClick={handleToggle}>
+        <svg
+          fill="white"
+          width="12px"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+        </svg>
+      </Box>
 
-      </div>
-
-      <div id="navbarBasicExample" className="navbar-menu">
-        <div className="navbar-end">
-          <Link to={'/'} className="navbar-item">
+      <Box
+        display={{ sm: show ? "block" : "none", md: "flex" }}
+        width={{ sm: "full", md: "auto" }}
+        alignItems="center"
+        flexGrow={1}
+      >
+        <Link to={'/'}>
+          <MenuItems>
             Home
-          </Link>
-          <Link to={'/favs'} className="navbar-item">
+          </MenuItems>
+        </Link>
+        <Link to={'/favs'}>
+          <MenuItems>
             Favs
-          </Link>
-        </div>
-      </div>
-    </nav>
-  )
-}
+          </MenuItems>
+        </Link>
+      </Box>
+    </Flex>
+  );
+};
 
-export default Navbar;
-
-
-document.addEventListener('DOMContentLoaded', () => {
-
-  const navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-
-  if (navbarBurgers.length > 0) {
-    navbarBurgers.forEach(el => {
-      el.addEventListener('click', () => {
-
-        const target = el.dataset.target;
-        const $target = document.getElementById(target);
-
-        el.classList.toggle('is-active');
-        $target.classList.toggle('is-active');
-      });
-    });
-  }
-});
+export default Header;

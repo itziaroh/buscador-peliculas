@@ -1,23 +1,32 @@
 import React from 'react';
+import { Grid, Box } from '@chakra-ui/core';
 
 import Movie from './Movie';
 
+
 const MoviesList = ({ movies }) => {
 	return (
-		<div className="movies_list">
+		<Grid
+			rowGap={25}
+			columnGap={20}
+			templateColumns={["1fr", "1fr", "1fr 1fr", "1fr 1fr 1fr"]}
+			mx={4}
+			justifyItems="center"
+			alignItems="center"
+		>
 			{movies.map(movie => {
 				return (
-					<div className="movies_list-item" key={movie.imdbID}>
+					<Box key={movie.imdbID}>
 						<Movie
 							title={movie.Title}
 							year={movie.Year}
 							poster={movie.Poster}
 							id={movie.imdbID}
 						/>
-					</div>
+					</Box>
 				)
 			})}
-		</div>
+		</Grid>
 	)
 };
 
