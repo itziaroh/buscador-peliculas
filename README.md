@@ -8,7 +8,7 @@ En ella puedes consultar el detalle de cada resultado e ir añadiendo aquellas q
 - React.js
 - Redux & redux-saga
 - JavaScript
-- Bulma (Librería CSS)
+- Chakra UI (Librería CSS)
 
 ## El proyecto en tu ordenador
 Puedes ejecutar el proyecto en tu propio ordenador. Para ello tan solo debes:
@@ -29,7 +29,7 @@ In this app you are able to look up the detail of every result and add to favour
 - React.js
 - Redux & redux-saga
 - JavaScript
-- Bulma (CSS framework)
+- Chakra UI (CSS framework)
 
 ## The project in your computer
 Also, you can run this project on your own computer. You only have to:
