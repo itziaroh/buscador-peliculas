@@ -32,7 +32,7 @@ const SearchForm = () => {
 					/>
 				</Box>
 				<Box>
-					<Button variantColor="green" borderColor="green.500">
+					<Button variantColor="green" borderColor="green.500" type="submit">
 						Search
           </Button>
 				</Box>
